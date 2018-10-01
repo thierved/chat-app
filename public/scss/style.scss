@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 68.5%;
+    box-sizing: inherit;
+    background-color: rgba(70, 131, 180, 0.9); 
+}
+
+.container {
+    width: 70%;    
+    height: 75vh;
+    margin: 5rem auto;
+    background-color: skyblue;
+    border-radius: 1rem;
+    overflow: hidden;
+
+    h1 {
+        color: #fff;
+        background-color:rgb(47, 79, 79);
+        text-align: center;
+        padding: 1rem 0;
+    }
+
+    .main-app {
+        display: flex;        
+
+        &__menu {
+            width: 15%;
+            background-color: rgb(20, 112, 112);
+            color: #fff;
+            font-size: 1.2rem;
+            height: 300px;
+
+            &-link {
+                display: inline-block;
+                color: #fff;
+                list-style: none;
+                text-decoration: none;
+                width: 100%;
+                padding: .2rem 1rem;
+            }
+        }
+
+        &__display {
+            width: 85%;
+        }
+    }
+}
