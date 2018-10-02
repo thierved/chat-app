@@ -1,0 +1,25 @@
+doctype html
+
+html(lang='eng')
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        link(rel='stylesheet', href='style.css')
+        title= title
+    body
+        .container
+            h1 chat app!
+            .main-app
+                nav.main-app__menu
+                    ul
+                        li.active
+                            a(href="/").main-app__menu-link home
+                        li
+                            a(href="/channels").main-app__menu-link channels
+                        li
+                            a(href="/users").main-app__menu-link users
+                
+                .main-app__display   
+                    block content
+ 

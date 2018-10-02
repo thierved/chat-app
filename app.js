@@ -1,12 +1,22 @@
 const express = require('express');
 const app = express();
+const channels = require('./data/channels.json');
 
-app.set('views', './views');
+app.set('view engine', 'jade');
+app.set('views', __dirname + '/views');
 
 app.use(express.static('public'));
 
-app.get('/hello', (req, res) => {
-    res.render("channels.jade");
+app.get('/', (req, res) => {
+    res.render("index", {title: "home"});
+});
+
+app.get('/channels', (req, res) => {
+    res.render("channels", {title: "channels", channels : channels});
+});
+
+app.get('/users', (req, res) => {
+    res.render("users", {title: "users"});
 });
 
 app.listen(3000, () => {

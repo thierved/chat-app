@@ -1,0 +1,7 @@
+[
+    {"channel" : "web developers" , "id" : 1},
+    {"channel" : "mobile developers" , "id" : 2},
+    {"channel" : "software architects" , "id" : 3},
+    {"channel" : "freelancers" , "id" : 4},
+    {"channel" : "managers" , "id" : 5}
+]

@@ -14,14 +14,16 @@ body {
   margin: 5rem auto;
   background-color: skyblue;
   border-radius: 1rem;
-  overflow: hidden; }
+  overflow: hidden;
+  font-family: sans-serif; }
   .container h1 {
     color: #fff;
     background-color: darkslategray;
     text-align: center;
     padding: 1rem 0; }
   .container .main-app {
-    display: flex; }
+    display: flex;
+    font-size: 1.1rem; }
     .container .main-app__menu {
       width: 15%;
       background-color: #147070;

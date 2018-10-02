@@ -1,11 +1,12 @@
-doctype html
+extends layout
 
-html(lang='eng')
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible" content="ie=edge")
-        title channels
-    body
-        h1 channels...
-
+block content
+    table
+        thead   
+            th name
+            th id
+        tbody
+            each channel in channels
+                tr 
+                    td= channel.channel
+                    td= channel.id
