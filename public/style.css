@@ -39,3 +39,12 @@ body {
         padding: .2rem 1rem; }
     .container .main-app__display {
       width: 85%; }
+    .container .main-app form {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      margin: auto; }
+      .container .main-app form label, .container .main-app form input, .container .main-app form button {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        text-align: center; }

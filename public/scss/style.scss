@@ -50,5 +50,18 @@ body {
         &__display {
             width: 85%;
         }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: auto;
+
+            label, input, button {
+                margin: 0.5rem;
+                padding: 0.5rem;
+                text-align: center;
+            }
+        }
     }
 }
