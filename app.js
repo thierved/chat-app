@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
 const channels = require('./data/channels.json');
+const bodyParser = require('body-parser');
 
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/views');
 
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public/'));
 
 app.get('/', (req, res) => {
@@ -17,6 +19,16 @@ app.get('/channels', (req, res) => {
 
 app.get('/add', (req, res) => {
     res.render("form");
+});
+
+app.post('/add', (req, res) => {
+    const channel = {
+        channel: req.body.name,
+        id: Math.random()
+    }
+
+    channels.push(channel);
+    res.redirect('/channels');
 });
 
 app.get('/users', (req, res) => {

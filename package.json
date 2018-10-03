@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/thierved/chat-app#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "jade": "^1.11.0",
     "node-sass": "^4.9.3"
