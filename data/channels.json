@@ -1,7 +1,7 @@
 [
-    {"channel" : "web developers" , "id" : 1},
-    {"channel" : "mobile developers" , "id" : 2},
-    {"channel" : "software architects" , "id" : 3},
-    {"channel" : "freelancers" , "id" : 4},
-    {"channel" : "managers" , "id" : 5}
+    {"channel" : "web developers" , "id" : "4fa001f7-c5ce-4cd4-853a-246e2569b60b"},
+    {"channel" : "mobile developers" , "id" : "61e093b8-24f5-4d8c-afba-9c57a633a27a"},
+    {"channel" : "software architects" , "id" : "e90b2fa8-55a6-4890-9799-6c66f87e7fe1"},
+    {"channel" : "freelancers" , "id" : "0b55d633-017d-4cbf-8d95-226d0221ee55"},
+    {"channel" : "managers" , "id" : "69328a64-6cbf-48e0-bb76-eb22a10132cc"}
 ]
