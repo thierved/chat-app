@@ -8,7 +8,7 @@
     "compile-sass": "node-sass public/scss/style.scss public/style.css -w"
   },
   "engines": {
-    "node": "10.14.0",
+    "node": "10.14.0"
   },
   "repository": {
     "type": "git",
