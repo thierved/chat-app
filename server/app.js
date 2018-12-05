@@ -11,11 +11,21 @@ const io = socketIO(server);
 app.use(express.static(path.join(__dirname, '../public')));
 
 io.on('connection', socket => {
-    console.log('new connection.')
-});
+    console.log('new connection.');
 
-io.on('disconnection', socket => {
-    console.log('disconnected.')
+    socket.emit('newMessage',{
+        from: 'hello@gmail.com',
+        text: 'welcome to sillicon valey!',
+        createdAt: new Date().getTime()
+    });
+
+    socket.on('createdMessage', data => {
+        console.log('created email', data);
+    });
+
+    socket.on('disconnection', socket => {
+        console.log('disconnected.');
+    });
 });
 
 server.listen(port, () => {
