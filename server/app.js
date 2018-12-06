@@ -2,12 +2,12 @@ const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io');
-const {messageGenerator} = require('./utils/messageGen');
 
 const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT || 3000;
 const io = socketIO(server);
+const {messageGenerator} = require('./utils/messageGen');
 
 app.use(express.static(path.join(__dirname, '../public')));
 
