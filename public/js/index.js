@@ -6,11 +6,6 @@ socket.on('connect', () => {
     socket.on('newMessage', data => {
         console.log(data);
     });
-
-    socket.emit('createdMessage', {
-        from: 'h@m.fs',
-        text: 'it works!'
-    });
 });
 
 socket.on('disconnect', () => {
