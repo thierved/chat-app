@@ -4,14 +4,26 @@ socket.on('connect', () => {
     console.log('connected to server.');
 
     socket.on('newMessage', data => {
-        console.log(data);
+        const li = $('<li></li>');
+        li.text(`${data.from}: ${data.text}`);
+
+        $('#messages').append(li);
     });
 });
+
 
 socket.on('disconnect', () => {
     console.log('disconnected to server.');
 });
 
-socket.on('newEmail', (data) => {
-    console.log('new Email.', data);
+
+$('#user-input-form').on('submit', e => {
+    e.preventDefault();
+
+    socket.emit('createdMessage', {
+        from: 'madian',
+        text: $('[name=message]').val()
+    }, () => {
+
+    });
 });

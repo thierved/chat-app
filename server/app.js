@@ -18,7 +18,8 @@ io.on('connection', socket => {
 
     socket.broadcast.emit('newMessage', messageGenerator('admin', 'new user connected.'))
 
-    socket.on('createdMessage', data => {
+    socket.on('createdMessage', (data, callback) => {
+        callback('I love node.');
         io.emit('newMessage', messageGenerator(data.from, data.text));
     });
 
