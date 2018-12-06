@@ -13,12 +13,22 @@ app.use(express.static(path.join(__dirname, '../public')));
 io.on('connection', socket => {
     console.log('new connection.');
 
+    socket.emit('newMessage', {
+        from: 'Admin',
+        text: 'welcome.',
+        createdAt: new Date().getTime()
+    });
+
+
+    socket.broadcast.emit('newMessage', {
+        from: 'admin',
+        text: 'new user joined',
+        createdAt: new Date().getTime()
+    })
+
     socket.on('createdMessage', data => {
-        io.emit('newMessage', {
-            from: data.from,
-            text: data.text,
-            createdAt: new Date().getTime()
-        });
+        
+
     });
 
     socket.on('disconnection', socket => {
