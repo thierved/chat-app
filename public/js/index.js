@@ -12,6 +12,17 @@ socket.on('connect', () => {
     });
 });
 
+socket.on('newLocationMessage', data => {
+    const li = $('<li></li>');
+    const a = $('<a target="_blank">My Location</a>')
+
+    li.text(`${data.from}: `);
+    a.attr('href', data.url);
+    li.append(a);
+
+   $('#messages').append(li); 
+});
+
 
 socket.on('disconnect', () => {
     console.log('disconnected to server.');
