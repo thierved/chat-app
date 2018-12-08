@@ -1,4 +1,5 @@
 const socket = io();
+const locationButton = $('#location');
 
 socket.on('connect', () => {
     console.log('connected to server.');
@@ -25,5 +26,20 @@ $('#user-input-form').on('submit', e => {
         text: $('[name=message]').val()
     }, () => {
 
+    });
+});
+
+locationButton.on('click', () => {
+    if (!navigator.geolocation) {
+        return alert('Geolocation unavailable in your browser.');
+    }
+
+    navigator.geolocation.getCurrentPosition(position => {
+        socket.emit('createLocation', {
+            longitude: position.coords.longitude,
+            latitude: position.coords.latitude
+        });
+    }, () => {
+        console.log('can\'t find location');
     });
 });
