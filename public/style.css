@@ -2,12 +2,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: sans-serif;
 }
 
 :root {
     --page-color: #f28;
     --main-color: #f25;
     --active-section-color: #950740;
+
+    --text-color: rgb(204, 204, 204);
 }
 
 body {
@@ -17,28 +20,58 @@ body {
 .container {
     display: flex;
     justify-content: space-around;
-    width: 75%;
+    width: 70%;
     height: 70vh;
     margin: 15vh auto;
     border-radius: .5rem;
     overflow: hidden;
-    box-shadow: 0px 1px 1px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.65);
 }
 
 .active-users {
     background-color: var(--active-section-color);
     width: 20%;
     padding: 1rem;
-    font-size: .9rem;    
+    font-size: .8rem;   
+    color:  var(--text-color)
 }
 
 
 #messages {
     list-style-type: none;
+    font-weight: 700;
 }
 
 .main {
     width: 80%;
-    padding: 1.5rem;
     background-color: var(--main-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.out-put {
+    padding: 1.5rem;
+    color: var(--text-color);
+}
+
+.main form {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+    background: rgba(15, 84, 116, 0.75);
+}
+
+.main input, .main button {
+    height: 40px;
+    padding: 5px;
+
+}
+
+input {
+    width: 65%;
+}
+
+button {
+    width: 15%;
 }
