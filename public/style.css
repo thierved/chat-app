@@ -1,55 +1,44 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --page-color: #f28;
+    --main-color: #f25;
+    --active-section-color: #950740;
+}
 
 body {
-  font-size: 68.5%;
-  box-sizing: inherit;
-  background-color: rgba(70, 131, 180, 0.9); }
+    background: var(--page-color);
+}
 
 .container {
-  width: 70%;
-  height: 75vh;
-  margin: 5rem auto;
-  background-color: skyblue;
-  border-radius: 1rem;
-  overflow: hidden;
-  font-family: sans-serif; }
-  .container h1 {
-    color: #fff;
-    background-color: darkslategray;
-    text-align: center;
-    padding: 1rem 0; }
-  .container .main-app {
     display: flex;
-    font-size: 1.1rem; }
-    .container .main-app__menu {
-      width: 15%;
-      background-color: #147070;
-      color: #fff;
-      font-size: 1.2rem;
-      height: 300px; }
-      .container .main-app__menu-link {
-        display: inline-block;
-        color: #fff;
-        list-style: none;
-        text-decoration: none;
-        width: 100%;
-        padding: .2rem 1rem; }
-    .container .main-app__display {
-      width: 85%; }
-    .container .main-app form {
-      display: flex;
-      flex-direction: column;
-      width: 50%;
-      margin: auto; }
-      .container .main-app form label, .container .main-app form input, .container .main-app form button {
-        margin: 0.5rem;
-        padding: 0.5rem;
-        text-align: center; }
-    .container .main-app .btn {
-      display: block;
-      margin: 1rem auto;
-      padding: 1rem;
-      text-decoration: none; }
+    justify-content: space-around;
+    width: 75%;
+    height: 70vh;
+    margin: 15vh auto;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0px 1px 1px;
+}
+
+.active-users {
+    background-color: var(--active-section-color);
+    width: 20%;
+    padding: 1rem;
+    font-size: .9rem;    
+}
+
+
+#messages {
+    list-style-type: none;
+}
+
+.main {
+    width: 80%;
+    padding: 1.5rem;
+    background-color: var(--main-color);
+}

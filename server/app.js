@@ -21,6 +21,7 @@ io.on('connection', socket => {
     socket.on('createdMessage', (data, callback) => {
         callback('I love node.');
         io.emit('newMessage', messageGenerator(data.from, data.text));
+        callback();
     });
 
     socket.on('createLocation', coords => {

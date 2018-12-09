@@ -1,5 +1,6 @@
 const socket = io();
 const locationButton = $('#location');
+const messageInput = $('[name=message]');
 
 socket.on('connect', () => {
     console.log('connected to server.');
@@ -33,10 +34,10 @@ $('#user-input-form').on('submit', e => {
     e.preventDefault();
 
     socket.emit('createdMessage', {
-        from: 'madian',
-        text: $('[name=message]').val()
+        from: 'User',
+        text: messageInput.val()
     }, () => {
-
+        messageInput.val('');
     });
 });
 
@@ -45,12 +46,17 @@ locationButton.on('click', () => {
         return alert('Geolocation unavailable in your browser.');
     }
 
+    locationButton.attr('disabled', 'disabled').text('Sending location...');
     navigator.geolocation.getCurrentPosition(position => {
+
+        locationButton.removeAttr('disabled');
+
         socket.emit('createLocation', {
             longitude: position.coords.longitude,
             latitude: position.coords.latitude
         });
     }, () => {
+        locationButton.removeAttr('disabled');
         console.log('can\'t find location');
     });
 });
