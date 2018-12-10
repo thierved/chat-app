@@ -6,22 +6,29 @@ socket.on('connect', () => {
     console.log('connected to server.');
 
     socket.on('newMessage', data => {
+        const time = moment(data.createdAt).format('h:mm a');
         const li = $('<li></li>');
-        li.text(`${data.from}: ${data.text}`);
+        const span = $('<span></span>');
 
-        $('#messages').append(li);
+        li.text(`${data.from} : ${data.text}`);
+        span.text(`${time}`);
+
+        $('#messages').append(li.append(span));
     });
 });
 
 socket.on('newLocationMessage', data => {
+    const time = moment(data.createdAt).format('h:mm a');
     const li = $('<li></li>');
-    const a = $('<a target="_blank">My Location</a>')
+    const a = $('<a target="_blank">My Location</a>');
+    const span = $('<span></span>');
 
     li.text(`${data.from}: `);
     a.attr('href', data.url);
     li.append(a);
+    span.text(`${time}`);
 
-   $('#messages').append(li); 
+    $('#messages').append(li.append(span));
 });
 
 

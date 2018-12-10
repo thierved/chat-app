@@ -55,6 +55,14 @@ body {
     color: var(--text-color);
 }
 
+span {
+    display: block;
+    width: 20%;
+    margin-left: 80%;
+    text-align: center;
+    background-color: blue;
+}
+
 .main form {
     display: flex;
     justify-content: space-evenly;
