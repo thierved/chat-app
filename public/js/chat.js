@@ -2,19 +2,21 @@ const socket = io();
 const locationButton = $('#location');
 const messageInput = $('[name=message]');
 
+
 socket.on('connect', () => {
     console.log('connected to server.');
+});
 
-    socket.on('newMessage', data => {
-        const time = moment(data.createdAt).format('h:mm a');
-        const li = $('<li></li>');
-        const span = $('<span></span>');
 
-        li.text(`${data.from} : ${data.text}`);
-        span.text(`${time}`);
+socket.on('newMessage', data => {
+    const time = moment(data.createdAt).format('h:mm a');
+    const li = $('<li></li>');
+    const span = $('<span></span>');
 
-        $('#messages').append(li.append(span));
-    });
+    li.text(`${data.from} : ${data.text}`);
+    span.text(`${time}`);
+
+    $('#messages').append(li.append(span))
 });
 
 socket.on('newLocationMessage', data => {
